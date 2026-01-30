@@ -1,0 +1,128 @@
+/* ============================================
+   Maison Doré - Menu Page Styles
+   ============================================ */
+
+/* Page Hero */
+.page-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.page-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.page-hero-subtitle {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: var(--space-md);
+}
+
+.page-hero-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
+}
+
+.page-hero-description {
+    font-size: 1.2rem;
+    color: var(--color-gray-300);
+}
+
+.header--dark { background: rgba(10, 10, 10, 0.95); }
+
+.menu-intro-content { max-width: 800px; margin: 0 auto; text-align: center; }
+.menu-intro-text { font-family: var(--font-heading); font-size: 1.4rem; font-style: italic; color: var(--color-gray-600); line-height: 1.8; }
+
+.menu-header { text-align: center; margin-bottom: var(--space-3xl); }
+.menu-header-description { font-size: 1.1rem; color: var(--color-gray-500); margin-bottom: var(--space-md); }
+.menu-price-tag { display: inline-block; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--color-gold); padding: var(--space-sm) var(--space-xl); border: 2px solid var(--color-gold); margin-top: var(--space-md); }
+
+.tasting-menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); max-width: 1000px; margin: 0 auto var(--space-3xl); }
+.tasting-course { display: flex; gap: var(--space-lg); padding: var(--space-lg); background: var(--color-white); border: 1px solid var(--color-gray-200); transition: all var(--transition-base); }
+.tasting-course:hover { border-color: var(--color-gold); box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+.tasting-course-number { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 300; color: var(--color-gold); line-height: 1; }
+.tasting-course-content { flex: 1; }
+.tasting-course-title { font-size: 1.2rem; color: var(--color-gray-900); margin-bottom: var(--space-xs); }
+.tasting-course-description { font-size: 0.9rem; color: var(--color-gray-500); margin-bottom: 0; }
+.tasting-menu-note { text-align: center; padding: var(--space-xl); background: var(--color-cream-dark); max-width: 800px; margin: 0 auto; }
+.tasting-menu-note p { color: var(--color-gray-600); margin-bottom: var(--space-sm); }
+.tasting-menu-note p:last-child { margin-bottom: 0; }
+
+.menu-category { margin-bottom: var(--space-3xl); }
+.menu-category:last-child { margin-bottom: 0; }
+.menu-category-title { font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-gold); text-align: center; margin-bottom: var(--space-xl); padding-bottom: var(--space-md); border-bottom: 1px solid var(--color-gray-700); }
+
+.menu-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg) var(--space-3xl); max-width: 1100px; margin: 0 auto; }
+.menu-item { position: relative; padding: var(--space-md) 0; border-bottom: 1px solid var(--color-gray-700); }
+.menu-item--featured { background: rgba(201, 169, 97, 0.1); padding: var(--space-lg); border: 1px solid var(--color-gold); }
+.menu-item-badge { position: absolute; top: var(--space-sm); right: var(--space-sm); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-black); background: var(--color-gold); padding: 4px 10px; }
+.menu-item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-xs); }
+.menu-item-title { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 500; color: var(--color-white); }
+.menu-item-price { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--color-gold); white-space: nowrap; margin-left: var(--space-md); }
+.menu-item-description { font-size: 0.9rem; color: var(--color-gray-400); margin-bottom: 0; line-height: 1.6; }
+
+.wine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; }
+.wine-image { overflow: hidden; }
+.wine-image img { width: 100%; height: 500px; object-fit: cover; }
+.wine-text { font-size: 1.05rem; color: var(--color-gray-600); margin-bottom: var(--space-md); }
+.wine-highlight { display: flex; flex-direction: column; margin: var(--space-xl) 0; }
+.wine-highlight-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-gold); }
+.wine-highlight-value { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 600; color: var(--color-gray-900); }
+
+.menu-cta-content { text-align: center; max-width: 600px; margin: 0 auto; }
+.menu-cta-content p { font-size: 1.1rem; color: var(--color-gray-400); margin-bottom: var(--space-xl); }
+
+.footer-simple { text-align: center; padding: var(--space-xl) 0; }
+.footer-links { display: flex; justify-content: center; gap: var(--space-xl); margin: var(--space-lg) 0; }
+.footer-links a { font-size: 0.9rem; color: var(--color-gray-500); transition: color var(--transition-base); }
+.footer-links a:hover { color: var(--color-gold); }
+.footer-copyright { font-size: 0.85rem; color: var(--color-gray-600); margin-top: var(--space-lg); }
+
+@media (max-width: 992px) {
+    .tasting-menu-grid, .menu-items { grid-template-columns: 1fr; }
+    .wine-grid { grid-template-columns: 1fr; }
+    .wine-image { order: -1; }
+    .wine-image img { height: 400px; }
+}
+@media (max-width: 768px) {
+    .page-hero { height: 50vh; min-height: 400px; }
+    .tasting-course { flex-direction: column; gap: var(--space-sm); text-align: center; }
+    .menu-item-header { flex-direction: column; align-items: flex-start; }
+    .menu-item-price { margin-left: 0; margin-top: var(--space-xs); }
+    .footer-links { flex-wrap: wrap; gap: var(--space-md); }
+}

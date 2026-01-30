@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reservieren Sie Ihren Tisch im Maison Doré - Fine Dining Restaurant">
+    <title>Reservierung | Maison Doré</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reservation.css">
+</head>
+<body class="page-reservation">
+    <header class="header header--dark" id="header">
+        <nav class="nav">
+            <a href="../index.html" class="nav-logo"><span class="logo-text">Maison Doré</span></a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">Über Uns</a></li>
+                <li class="nav-item"><a href="menu.html" class="nav-link">Menü</a></li>
+                <li class="nav-item"><a href="../index.html#chef" class="nav-link">Der Chef</a></li>
+                <li class="nav-item"><a href="../index.html#gallery" class="nav-link">Galerie</a></li>
+                <li class="nav-item"><a href="reservation.html" class="nav-link nav-link--cta active">Reservieren</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="page-hero page-hero--small">
+        <div class="page-hero-bg">
+            <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1920&q=80" alt="Restaurant Ambiente" class="page-hero-image">
+            <div class="page-hero-overlay"></div>
+        </div>
+        <div class="page-hero-content">
+            <span class="page-hero-subtitle">Ihr Erlebnis beginnt hier</span>
+            <h1 class="page-hero-title">Tischreservierung</h1>
+        </div>
+    </section>
+
+    <section class="reservation-section section">
+        <div class="container">
+            <div class="reservation-grid">
+                <div class="reservation-info">
+                    <span class="section-subtitle">Wichtige Informationen</span>
+                    <h2 class="section-title">Bevor Sie reservieren</h2>
+                    <div class="reservation-details">
+                        <div class="reservation-detail">
+                            <h4>Öffnungszeiten</h4>
+                            <p>Dienstag - Samstag<br>18:00 - 23:00 Uhr<br><small>Sonntag & Montag geschlossen</small></p>
+                        </div>
+                        <div class="reservation-detail">
+                            <h4>Dresscode</h4>
+                            <p>Smart Casual bis Elegant<br><small>Keine Sportbekleidung oder Sneaker</small></p>
+                        </div>
+                        <div class="reservation-detail">
+                            <h4>Kinder</h4>
+                            <p>Kinder ab 12 Jahren sind herzlich willkommen</p>
+                        </div>
+                        <div class="reservation-detail">
+                            <h4>Stornierung</h4>
+                            <p>Kostenlose Stornierung bis 48h vor dem Termin<br><small>Bei kurzfristiger Absage: € 100 pro Person</small></p>
+                        </div>
+                    </div>
+                    <div class="reservation-contact">
+                        <p>Für Gruppen ab 8 Personen oder private Events kontaktieren Sie uns bitte direkt:</p>
+                        <a href="tel:+498912345678" class="reservation-phone">+49 89 123 456 78</a>
+                        <a href="mailto:reservierung@maisondore.de" class="reservation-email">reservierung@maisondore.de</a>
+                    </div>
+                </div>
+
+                <div class="reservation-form-wrapper">
+                    <form class="reservation-form" id="reservation-form">
+                        <h3 class="reservation-form-title">Reservierungsanfrage</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Datum *</label>
+                                <input type="date" id="date" name="date" required min="">
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Uhrzeit *</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Bitte wählen</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Anzahl Gäste *</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Bitte wählen</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 Personen</option>
+                                    <option value="3">3 Personen</option>
+                                    <option value="4">4 Personen</option>
+                                    <option value="5">5 Personen</option>
+                                    <option value="6">6 Personen</option>
+                                    <option value="7">7 Personen</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="occasion">Anlass</label>
+                                <select id="occasion" name="occasion">
+                                    <option value="">Optional</option>
+                                    <option value="birthday">Geburtstag</option>
+                                    <option value="anniversary">Jahrestag</option>
+                                    <option value="business">Geschäftsessen</option>
+                                    <option value="celebration">Feier</option>
+                                    <option value="other">Sonstiges</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-divider"></div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstname">Vorname *</label>
+                                <input type="text" id="firstname" name="firstname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Nachname *</label>
+                                <input type="text" id="lastname" name="lastname" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">E-Mail *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+49">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label for="menu">Menüauswahl</label>
+                            <select id="menu" name="menu">
+                                <option value="">Vor Ort entscheiden</option>
+                                <option value="degustation">Dégustation Menü (€ 245)</option>
+                                <option value="degustation-wine">Dégustation mit Weinbegleitung (€ 390)</option>
+                                <option value="alacarte">À La Carte</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label for="allergies">Allergien / Unverträglichkeiten</label>
+                            <textarea id="allergies" name="allergies" rows="2" placeholder="z.B. Glutenunverträglichkeit, Nussallergie, vegetarisch..."></textarea>
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label for="requests">Besondere Wünsche</label>
+                            <textarea id="requests" name="requests" rows="3" placeholder="z.B. Tisch am Fenster, besonderer Anlass, Überraschung..."></textarea>
+                        </div>
+
+                        <div class="form-group form-group--checkbox">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">Ich akzeptiere die <a href="#">Datenschutzbestimmungen</a> und <a href="#">AGB</a> *</label>
+                        </div>
+
+                        <div class="form-group form-group--checkbox">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Ich möchte den Newsletter mit exklusiven Angeboten erhalten</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">Reservierung anfragen</button>
+
+                        <p class="form-note">* Pflichtfelder. Sie erhalten innerhalb von 24 Stunden eine Bestätigung.</p>
+                    </form>
+
+                    <div class="reservation-success" id="reservation-success" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>Vielen Dank für Ihre Anfrage!</h3>
+                        <p>Wir haben Ihre Reservierungsanfrage erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.</p>
+                        <p><strong>Reservierungsnummer:</strong> <span id="reservation-number"></span></p>
+                        <a href="../index.html" class="btn btn-primary">Zurück zur Startseite</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gift-section section section--dark">
+        <div class="container">
+            <div class="gift-content">
+                <span class="section-subtitle section-subtitle--light">Das perfekte Geschenk</span>
+                <h2 class="section-title">Geschenkgutscheine</h2>
+                <p>Verschenken Sie ein unvergessliches kulinarisches Erlebnis. Unsere Gutscheine sind ab Ausstellung 2 Jahre gültig.</p>
+                <div class="gift-options">
+                    <div class="gift-option">
+                        <span class="gift-option-name">Dégustation für 2</span>
+                        <span class="gift-option-price">€ 490</span>
+                    </div>
+                    <div class="gift-option">
+                        <span class="gift-option-name">Dégustation mit Weinbegleitung für 2</span>
+                        <span class="gift-option-price">€ 780</span>
+                    </div>
+                    <div class="gift-option">
+                        <span class="gift-option-name">Wertgutschein</span>
+                        <span class="gift-option-price">Ab € 100</span>
+                    </div>
+                </div>
+                <a href="mailto:reservierung@maisondore.de?subject=Gutscheinanfrage" class="btn btn-primary btn-primary--light">Gutschein anfragen</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-simple">
+                <a href="../index.html" class="footer-logo">Maison Doré</a>
+                <p class="footer-tagline">Fine Dining seit 2010</p>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="menu.html">Menü</a>
+                    <a href="reservation.html">Reservierung</a>
+                    <a href="../index.html#contact">Kontakt</a>
+                </div>
+                <p class="footer-copyright">&copy; 2024 Maison Doré. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/reservation.js"></script>
+</body>
+</html>
