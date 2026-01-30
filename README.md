@@ -92,6 +92,30 @@ In `index.html` die folgenden Stellen anpassen:
 - Google Maps Embed URL
 - Strukturierte Daten (JSON-LD)
 
+## iFrame Embedding (Portfolio/Showcase)
+
+Diese Seite kann in iFrames eingebettet werden - nur von erlaubten Domains.
+
+### Erlaubte Domains
+- `studiomeyer.io`
+- `*.studiomeyer.io` (alle Subdomains)
+
+### Konfiguration ändern
+Datei: `/etc/nginx/sites-available/restaurant.studiomeyer.io`
+
+```nginx
+# CSP Header für iFrame-Embedding
+add_header Content-Security-Policy "frame-ancestors 'self' https://studiomeyer.io https://*.studiomeyer.io" always;
+```
+
+Um weitere Domains zu erlauben, Domain zur Liste hinzufügen und Nginx neuladen:
+```bash
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+### Health Check
+`/embed-check` - Zeigt Embedding-Status und erlaubte Domains
+
 ## Browser Support
 
 - Chrome (latest)

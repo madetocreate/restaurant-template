@@ -245,4 +245,42 @@
     );
     console.log('Fine Dining Restaurant - Made with passion');
 
+    // ============== Booking Form ==============
+    const bookingForm = document.getElementById('booking-form');
+    const dateInput = document.getElementById('b-date');
+
+    // Set minimum date to today
+    if (dateInput) {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+    }
+
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = {
+                date: document.getElementById('b-date').value,
+                time: document.getElementById('b-time').value,
+                guests: document.getElementById('b-guests').value,
+                name: document.getElementById('b-name').value,
+                email: document.getElementById('b-email').value,
+                phone: document.getElementById('b-phone').value
+            };
+
+            // Log reservation (would send to backend in production)
+            console.log('Reservation:', formData);
+
+            // Show success state
+            bookingForm.style.display = 'none';
+            const successEl = document.getElementById('booking-success');
+            if (successEl) {
+                successEl.classList.add('show');
+            }
+        });
+    }
+
 })();

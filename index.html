@@ -12,23 +12,23 @@
     <meta name="keywords" content="Fine Dining, Restaurant München, Michelin Sterne, Haute Cuisine, Gourmet, Tischreservierung, Luxus Restaurant">
     <meta name="author" content="Maison Doré">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://maisondore.de/">
+    <link rel="canonical" href="https://restaurant.studiomeyer.io/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="restaurant">
-    <meta property="og:url" content="https://maisondore.de/">
+    <meta property="og:url" content="https://restaurant.studiomeyer.io/">
     <meta property="og:title" content="Maison Doré | Fine Dining Restaurant München">
     <meta property="og:description" content="Erleben Sie exquisite Haute Cuisine im Maison Doré München. 2 Michelin Sterne, Chef Marcus Laurent.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=75&auto=format">
     <meta property="og:locale" content="de_DE">
     <meta property="og:site_name" content="Maison Doré">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://maisondore.de/">
+    <meta property="twitter:url" content="https://restaurant.studiomeyer.io/">
     <meta property="twitter:title" content="Maison Doré | Fine Dining Restaurant München">
     <meta property="twitter:description" content="Erleben Sie exquisite Haute Cuisine im Maison Doré München. 2 Michelin Sterne.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=75&auto=format">
 
     <!-- Theme & PWA -->
     <meta name="theme-color" content="#c9a961">
@@ -46,6 +46,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="dns-prefetch" href="https://images.unsplash.com">
+
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1280&q=75&auto=format" fetchpriority="high">
 
     <!-- Critical CSS Inline -->
     <style>
@@ -95,7 +98,7 @@
             "latitude": 48.1391,
             "longitude": 11.5819
         },
-        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80",
+        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=75&auto=format",
         "priceRange": "€€€€",
         "servesCuisine": ["French", "Fine Dining", "Haute Cuisine"],
         "openingHoursSpecification": [
@@ -146,7 +149,7 @@
                 <li class="nav-item" role="none"><a href="pages/menu.html" class="nav-link" role="menuitem">Menü</a></li>
                 <li class="nav-item" role="none"><a href="#chef" class="nav-link" role="menuitem">Der Chef</a></li>
                 <li class="nav-item" role="none"><a href="#gallery" class="nav-link" role="menuitem">Galerie</a></li>
-                <li class="nav-item" role="none"><a href="pages/reservation.html" class="nav-link nav-link--cta" role="menuitem">Reservieren</a></li>
+                <li class="nav-item" role="none"><a href="#reservieren" class="nav-link nav-link--cta" role="menuitem">Reservieren</a></li>
             </ul>
             <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-menu">
                 <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -160,11 +163,12 @@
         <!-- Hero Section -->
         <section class="hero" id="hero" aria-labelledby="hero-title">
             <div class="hero-bg">
-                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80"
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1280&q=75&auto=format"
                      alt="Elegantes Restaurant Ambiente mit gedimmtem Licht und festlich gedeckten Tischen"
                      class="hero-image"
-                     width="1920" height="1080"
-                     fetchpriority="high">
+                     width="1280" height="720"
+                     fetchpriority="high"
+                     decoding="async">
                 <div class="hero-overlay" aria-hidden="true"></div>
             </div>
             <div class="hero-content">
@@ -213,12 +217,12 @@
                     </div>
                     <div class="about-images">
                         <div class="about-image about-image--main">
-                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80"
+                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=75&auto=format"
                                  alt="Kunstvolles Fine Dining Gericht mit essbaren Blüten garniert"
                                  loading="lazy" width="800" height="600">
                         </div>
                         <div class="about-image about-image--secondary">
-                            <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80"
+                            <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=75&auto=format"
                                  alt="Stilvolles Restaurant Interieur mit warmem Ambiente"
                                  loading="lazy" width="600" height="400">
                         </div>
@@ -238,7 +242,7 @@
                 <div class="dishes-grid" role="list">
                     <article class="dish-card" role="listitem">
                         <div class="dish-card-image">
-                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80"
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=75&auto=format"
                                  alt="Perfekt gebratenes Wagyu A5 Filet mit Trüffel-Jus"
                                  loading="lazy" width="600" height="400">
                             <div class="dish-card-overlay">
@@ -253,7 +257,7 @@
                     </article>
                     <article class="dish-card" role="listitem">
                         <div class="dish-card-image">
-                            <img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=600&q=80"
+                            <img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=600&q=75&auto=format"
                                  alt="Frischer bretonischer Hummer in Champagner-Beurre-Blanc"
                                  loading="lazy" width="600" height="400">
                             <div class="dish-card-overlay">
@@ -268,7 +272,7 @@
                     </article>
                     <article class="dish-card" role="listitem">
                         <div class="dish-card-image">
-                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80"
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=75&auto=format"
                                  alt="Valrhona Schokoladen-Dessert mit Himbeere und Goldblatt"
                                  loading="lazy" width="600" height="400">
                             <div class="dish-card-overlay">
@@ -294,7 +298,7 @@
                 <div class="chef-grid">
                     <div class="chef-image-wrapper">
                         <div class="chef-image">
-                            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80"
+                            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=75&auto=format"
                                  alt="Chef Marcus Laurent in seiner Küche bei der Zubereitung eines Gerichts"
                                  loading="lazy" width="800" height="1000">
                         </div>
@@ -334,67 +338,123 @@
             </header>
             <div class="gallery-grid" role="list" aria-label="Restaurant Bildergalerie">
                 <figure class="gallery-item gallery-item--large" role="listitem">
-                    <img src="https://images.unsplash.com/photo-1482275548304-a58859dc31b7?w=1200&q=80"
+                    <img src="https://images.unsplash.com/photo-1482275548304-a58859dc31b7?w=1200&q=75&auto=format"
                          alt="Elegantes Restaurant Ambiente bei Abendbeleuchtung"
                          loading="lazy" width="1200" height="800">
                 </figure>
                 <figure class="gallery-item" role="listitem">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80"
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=75&auto=format"
                          alt="Kunstvoll angerichtetes Gourmet-Gericht"
                          loading="lazy" width="600" height="400">
                 </figure>
                 <figure class="gallery-item" role="listitem">
-                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80"
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=75&auto=format"
                          alt="Frische saisonale Zutaten für die Küche"
                          loading="lazy" width="600" height="400">
                 </figure>
                 <figure class="gallery-item" role="listitem">
-                    <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80"
+                    <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=75&auto=format"
                          alt="Sommelier beim Einschenken von edlem Rotwein"
                          loading="lazy" width="600" height="400">
                 </figure>
                 <figure class="gallery-item gallery-item--tall" role="listitem">
-                    <img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=800&q=80"
+                    <img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=800&q=75&auto=format"
                          alt="Kreatives Dessert mit Schokolade und Früchten"
                          loading="lazy" width="800" height="1000">
                 </figure>
                 <figure class="gallery-item" role="listitem">
-                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80"
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=75&auto=format"
                          alt="Fine Dining Präsentation auf weißem Porzellan"
                          loading="lazy" width="600" height="400">
                 </figure>
                 <figure class="gallery-item" role="listitem">
-                    <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=600&q=80"
+                    <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=600&q=75&auto=format"
                          alt="Köche bei der Arbeit in der offenen Küche"
                          loading="lazy" width="600" height="400">
                 </figure>
             </div>
         </section>
 
-        <!-- Reservation CTA Section -->
-        <section class="cta section" id="reservation-cta" aria-labelledby="cta-title">
-            <div class="cta-bg">
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80"
-                     alt="Restaurant Terrasse bei Nacht mit Kerzenlicht"
-                     loading="lazy" width="1920" height="1080">
-                <div class="cta-overlay" aria-hidden="true"></div>
+        <!-- Reservation Section -->
+        <section class="booking section" id="reservieren">
+            <div class="booking-bg">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=75&auto=format" alt="" loading="lazy">
+                <div class="booking-overlay"></div>
             </div>
             <div class="container">
-                <div class="cta-content">
-                    <span class="section-subtitle section-subtitle--light">Erleben Sie es selbst</span>
-                    <h2 class="cta-title" id="cta-title">Reservieren Sie Ihren Tisch</h2>
-                    <p class="cta-description">Schenken Sie sich oder Ihren Liebsten ein unvergessliches kulinarisches Erlebnis. Unsere Tische sind begehrt – reservieren Sie frühzeitig.</p>
-                    <div class="cta-info">
-                        <div class="cta-info-item">
-                            <span class="cta-info-label">Öffnungszeiten</span>
-                            <span class="cta-info-value">Di - Sa: 18:00 - 23:00</span>
-                        </div>
-                        <div class="cta-info-item">
-                            <span class="cta-info-label">Telefon</span>
-                            <a href="tel:+498912345678" class="cta-info-value">+49 89 123 456 78</a>
+                <div class="booking-layout">
+                    <div class="booking-info">
+                        <span class="section-subtitle section-subtitle--light">Reservierung</span>
+                        <h2 class="booking-title">Ihr Tisch wartet</h2>
+                        <p class="booking-text">Erleben Sie einen unvergesslichen Abend im Maison Doré. Für die beste Erfahrung empfehlen wir eine Reservierung mindestens eine Woche im Voraus.</p>
+                        <div class="booking-details">
+                            <div class="booking-detail">
+                                <span class="detail-label">Öffnungszeiten</span>
+                                <span class="detail-value">Di – Sa, 18:00 – 23:00</span>
+                            </div>
+                            <div class="booking-detail">
+                                <span class="detail-label">Telefon</span>
+                                <a href="tel:+498912345678" class="detail-value">+49 89 123 456 78</a>
+                            </div>
                         </div>
                     </div>
-                    <a href="pages/reservation.html" class="btn btn-primary btn-primary--light">Jetzt Reservieren</a>
+                    <div class="booking-card" id="booking-card">
+                        <form class="booking-form" id="booking-form">
+                            <h3 class="booking-form-title">Tisch reservieren</h3>
+
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label for="b-date">Datum</label>
+                                    <input type="date" id="b-date" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="b-time">Uhrzeit</label>
+                                    <select id="b-time" required>
+                                        <option value="">Wählen</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="18:30">18:30</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="19:30">19:30</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="20:30">20:30</option>
+                                        <option value="21:00">21:00</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="b-guests">Gäste</label>
+                                    <select id="b-guests" required>
+                                        <option value="2">2 Personen</option>
+                                        <option value="1">1 Person</option>
+                                        <option value="3">3 Personen</option>
+                                        <option value="4">4 Personen</option>
+                                        <option value="5">5 Personen</option>
+                                        <option value="6">6 Personen</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="b-name">Name</label>
+                                    <input type="text" id="b-name" placeholder="Ihr Name" required>
+                                </div>
+                                <div class="form-field form-field--full">
+                                    <label for="b-email">E-Mail</label>
+                                    <input type="email" id="b-email" placeholder="ihre@email.de" required>
+                                </div>
+                                <div class="form-field form-field--full">
+                                    <label for="b-phone">Telefon</label>
+                                    <input type="tel" id="b-phone" placeholder="+49" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="booking-submit">Reservierung anfragen</button>
+                            <p class="booking-note">Bestätigung innerhalb von 2 Stunden</p>
+                        </form>
+
+                        <div class="booking-success" id="booking-success">
+                            <div class="success-check">✓</div>
+                            <h3>Vielen Dank!</h3>
+                            <p>Ihre Reservierungsanfrage wurde gesendet. Wir melden uns in Kürze.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

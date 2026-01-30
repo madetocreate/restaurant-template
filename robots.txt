@@ -1,0 +1,8 @@
+# Robots.txt for Maison Doré Restaurant
+# https://restaurant.studiomeyer.io
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://restaurant.studiomeyer.io/sitemap.xml
