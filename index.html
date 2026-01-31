@@ -74,7 +74,7 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap"></noscript>
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2.0">
 
     <!-- Structured Data - Restaurant -->
     <script type="application/ld+json">
@@ -375,86 +375,81 @@
             </div>
         </section>
 
-        <!-- Reservation Section -->
-        <section class="booking section" id="reservieren">
-            <div class="booking-bg">
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=75&auto=format" alt="" loading="lazy">
-                <div class="booking-overlay"></div>
-            </div>
+        <!-- Quick Reservation Widget -->
+        <section class="quick-reserve section" id="reservieren" aria-labelledby="reserve-title">
             <div class="container">
-                <div class="booking-layout">
-                    <div class="booking-info">
-                        <span class="section-subtitle section-subtitle--light">Reservierung</span>
-                        <h2 class="booking-title">Ihr Tisch wartet</h2>
-                        <p class="booking-text">Erleben Sie einen unvergesslichen Abend im Maison Doré. Für die beste Erfahrung empfehlen wir eine Reservierung mindestens eine Woche im Voraus.</p>
-                        <div class="booking-details">
-                            <div class="booking-detail">
-                                <span class="detail-label">Öffnungszeiten</span>
-                                <span class="detail-value">Di – Sa, 18:00 – 23:00</span>
-                            </div>
-                            <div class="booking-detail">
-                                <span class="detail-label">Telefon</span>
-                                <a href="tel:+498912345678" class="detail-value">+49 89 123 456 78</a>
-                            </div>
+                <header class="section-header section-header--center">
+                    <span class="section-subtitle">Schnell & Einfach</span>
+                    <h2 class="section-title" id="reserve-title">Tisch reservieren</h2>
+                    <p class="section-description">3 Klicks zu Ihrem kulinarischen Erlebnis</p>
+                </header>
+
+                <div class="reserve-widget" id="reserve-widget">
+                    <!-- Step Indicators -->
+                    <div class="reserve-steps">
+                        <button class="reserve-step active" data-step="1"><span class="step-num">1</span><span class="step-txt">Gäste</span></button>
+                        <button class="reserve-step" data-step="2"><span class="step-num">2</span><span class="step-txt">Datum</span></button>
+                        <button class="reserve-step" data-step="3"><span class="step-num">3</span><span class="step-txt">Uhrzeit</span></button>
+                    </div>
+
+                    <!-- Step 1: Guests -->
+                    <div class="reserve-panel active" id="panel-1">
+                        <div class="guest-grid">
+                            <button class="guest-btn" data-guests="1"><span class="guest-num">1</span><span class="guest-label">Person</span></button>
+                            <button class="guest-btn selected" data-guests="2"><span class="guest-num">2</span><span class="guest-label">Personen</span></button>
+                            <button class="guest-btn" data-guests="3"><span class="guest-num">3</span><span class="guest-label">Personen</span></button>
+                            <button class="guest-btn" data-guests="4"><span class="guest-num">4</span><span class="guest-label">Personen</span></button>
+                            <button class="guest-btn" data-guests="5"><span class="guest-num">5</span><span class="guest-label">Personen</span></button>
+                            <button class="guest-btn" data-guests="6"><span class="guest-num">6</span><span class="guest-label">Personen</span></button>
+                        </div>
+                        <p class="reserve-note">Gruppen 7+ Personen: <a href="tel:+498912345678">+49 89 123 456 78</a></p>
+                    </div>
+
+                    <!-- Step 2: Date -->
+                    <div class="reserve-panel" id="panel-2">
+                        <div class="date-scroll" id="date-container"></div>
+                        <p class="reserve-note">Di - Sa geöffnet</p>
+                    </div>
+
+                    <!-- Step 3: Time -->
+                    <div class="reserve-panel" id="panel-3">
+                        <div class="time-grid">
+                            <button class="time-btn" data-time="18:00">18:00</button>
+                            <button class="time-btn" data-time="18:30">18:30</button>
+                            <button class="time-btn" data-time="19:00">19:00</button>
+                            <button class="time-btn" data-time="19:30">19:30</button>
+                            <button class="time-btn" data-time="20:00">20:00</button>
+                            <button class="time-btn" data-time="20:30">20:30</button>
+                            <button class="time-btn" data-time="21:00">21:00</button>
                         </div>
                     </div>
-                    <div class="booking-card" id="booking-card">
-                        <form class="booking-form" id="booking-form">
-                            <h3 class="booking-form-title">Tisch reservieren</h3>
 
-                            <div class="form-grid">
-                                <div class="form-field">
-                                    <label for="b-date">Datum</label>
-                                    <input type="date" id="b-date" required>
-                                </div>
-                                <div class="form-field">
-                                    <label for="b-time">Uhrzeit</label>
-                                    <select id="b-time" required>
-                                        <option value="">Wählen</option>
-                                        <option value="18:00">18:00</option>
-                                        <option value="18:30">18:30</option>
-                                        <option value="19:00">19:00</option>
-                                        <option value="19:30">19:30</option>
-                                        <option value="20:00">20:00</option>
-                                        <option value="20:30">20:30</option>
-                                        <option value="21:00">21:00</option>
-                                    </select>
-                                </div>
-                                <div class="form-field">
-                                    <label for="b-guests">Gäste</label>
-                                    <select id="b-guests" required>
-                                        <option value="2">2 Personen</option>
-                                        <option value="1">1 Person</option>
-                                        <option value="3">3 Personen</option>
-                                        <option value="4">4 Personen</option>
-                                        <option value="5">5 Personen</option>
-                                        <option value="6">6 Personen</option>
-                                    </select>
-                                </div>
-                                <div class="form-field">
-                                    <label for="b-name">Name</label>
-                                    <input type="text" id="b-name" placeholder="Ihr Name" required>
-                                </div>
-                                <div class="form-field form-field--full">
-                                    <label for="b-email">E-Mail</label>
-                                    <input type="email" id="b-email" placeholder="ihre@email.de" required>
-                                </div>
-                                <div class="form-field form-field--full">
-                                    <label for="b-phone">Telefon</label>
-                                    <input type="tel" id="b-phone" placeholder="+49" required>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="booking-submit">Reservierung anfragen</button>
-                            <p class="booking-note">Bestätigung innerhalb von 2 Stunden</p>
-                        </form>
-
-                        <div class="booking-success" id="booking-success">
-                            <div class="success-check">✓</div>
-                            <h3>Vielen Dank!</h3>
-                            <p>Ihre Reservierungsanfrage wurde gesendet. Wir melden uns in Kürze.</p>
+                    <!-- Summary Bar -->
+                    <div class="reserve-summary">
+                        <div class="summary-items">
+                            <span class="sum-item" id="sum-guests">2 Gäste</span>
+                            <span class="sum-dot">•</span>
+                            <span class="sum-item" id="sum-date">Datum wählen</span>
+                            <span class="sum-dot">•</span>
+                            <span class="sum-item" id="sum-time">Zeit wählen</span>
                         </div>
                     </div>
+
+                    <!-- Contact Form -->
+                    <div class="reserve-form" id="reserve-form">
+                        <input type="text" id="r-name" class="r-input" placeholder="Name *" required>
+                        <input type="email" id="r-email" class="r-input" placeholder="E-Mail *" required>
+                        <input type="tel" id="r-phone" class="r-input" placeholder="Telefon *" required>
+                        <button type="button" class="btn btn-primary r-submit" id="r-submit" disabled>Reservieren</button>
+                    </div>
+                </div>
+
+                <!-- Success -->
+                <div class="reserve-success" id="reserve-success" style="display:none;">
+                    <div class="success-icon">✓</div>
+                    <h3>Anfrage gesendet!</h3>
+                    <p>Bestätigung folgt per E-Mail innerhalb von 2h.</p>
+                    <button class="btn btn-secondary" onclick="location.reload()">Neue Reservierung</button>
                 </div>
             </div>
         </section>
@@ -598,7 +593,12 @@
         </div>
     </footer>
 
+    <!-- GSAP + Lenis for Premium Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
     <!-- JavaScript - deferred for performance -->
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js?v=2.0" defer></script>
 </body>
 </html>

@@ -1730,267 +1730,221 @@ textarea:focus-visible {
     .guest-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ============== Booking Section - Premium ============== */
-.booking {
-    position: relative;
-    padding: var(--space-4xl) 0;
-    overflow: hidden;
+/* ============== Custom Cursor ============== */
+@media (pointer: fine) {
+    * { cursor: none !important; }
+
+    .custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        border: 1.5px solid var(--color-gold);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+        mix-blend-mode: difference;
+    }
+
+    .custom-cursor-dot {
+        position: fixed;
+        top: -3px;
+        left: -3px;
+        width: 6px;
+        height: 6px;
+        background: var(--color-gold);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 100000;
+        transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+    }
+
+    .custom-cursor.cursor-hover {
+        width: 60px;
+        height: 60px;
+        border-color: var(--color-gold-light);
+        background: rgba(201, 169, 97, 0.08);
+        transform-origin: center;
+    }
+
+    .custom-cursor-dot.cursor-hover {
+        width: 4px;
+        height: 4px;
+        background: var(--color-white);
+    }
+
+    .custom-cursor.cursor-view {
+        width: 80px;
+        height: 80px;
+        border-color: var(--color-white);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .custom-cursor.cursor-view::after {
+        content: 'View';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: var(--font-body);
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
 }
 
-.booking-bg {
-    position: absolute;
+@media (pointer: coarse) {
+    .custom-cursor,
+    .custom-cursor-dot {
+        display: none !important;
+    }
+}
+
+/* ============== Lightbox ============== */
+.lightbox {
+    position: fixed;
     inset: 0;
-}
-
-.booking-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.booking-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 100%);
-}
-
-.booking-layout {
-    position: relative;
-    z-index: 10;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: var(--space-3xl);
-    align-items: center;
-}
-
-.booking-info {
-    color: var(--color-white);
-}
-
-.booking-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: var(--color-white);
-    margin-bottom: var(--space-md);
-    line-height: 1.1;
-}
-
-.booking-text {
-    font-size: 1.1rem;
-    color: var(--color-gray-300);
-    margin-bottom: var(--space-xl);
-    line-height: 1.7;
-}
-
-.booking-details {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-}
-
-.booking-detail {
-    padding: var(--space-md);
-    background: rgba(255,255,255,0.05);
-    border-left: 3px solid var(--color-gold);
-}
-
-.detail-label {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-gold);
-    margin-bottom: var(--space-xs);
-}
-
-.detail-value {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    color: var(--color-white);
-    text-decoration: none;
-    transition: color var(--transition-base);
-}
-
-a.detail-value:hover {
-    color: var(--color-gold);
-}
-
-/* Booking Card */
-.booking-card {
-    background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(248,245,240,0.98) 100%);
-    border-radius: 24px;
-    padding: var(--space-2xl);
-    box-shadow:
-        0 50px 100px rgba(0,0,0,0.4),
-        0 0 0 1px rgba(201,169,97,0.1),
-        inset 0 1px 0 rgba(255,255,255,0.8);
-}
-
-.booking-form-title {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--color-gray-900);
-    text-align: center;
-    margin-bottom: var(--space-xl);
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-md);
-    margin-bottom: var(--space-lg);
-}
-
-.form-field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.form-field--full {
-    grid-column: 1 / -1;
-}
-
-.form-field label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-gray-600);
-}
-
-.form-field input,
-.form-field select {
-    padding: 14px 16px;
-    border: none;
-    border-radius: 12px;
-    background: var(--color-white);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06), inset 0 0 0 1px rgba(0,0,0,0.08);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--color-black);
-    transition: all var(--transition-base);
-    width: 100%;
-}
-
-.form-field input::placeholder {
-    color: var(--color-gray-400);
-}
-
-.form-field input:focus,
-.form-field select:focus {
-    outline: none;
-    box-shadow: 0 4px 16px rgba(201,169,97,0.2), inset 0 0 0 2px var(--color-gold);
-}
-
-.booking-submit {
-    width: 100%;
-    padding: 18px 32px;
-    border: none;
-    border-radius: 12px;
-    background: var(--color-black);
-    color: var(--color-white);
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.booking-submit:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(201,169,97,0.4);
-}
-
-.booking-note {
-    font-size: 0.8rem;
-    color: var(--color-gray-500);
-    text-align: center;
-    margin: var(--space-md) 0 0;
-}
-
-/* Booking Success */
-.booking-success {
-    display: none;
-    text-align: center;
-    padding: var(--space-2xl);
-}
-
-.booking-success.show {
-    display: block;
-    animation: fadeIn 0.4s ease;
-}
-
-.success-check {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-    color: var(--color-white);
-    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.95);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
-    margin: 0 auto var(--space-lg);
-    box-shadow: 0 12px 32px rgba(201,169,97,0.4);
+    z-index: 10000;
+    cursor: pointer !important;
+    backdrop-filter: blur(20px);
 }
 
-.booking-success h3 {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--color-gray-900);
-    margin-bottom: var(--space-sm);
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
 }
 
-.booking-success p {
-    color: var(--color-gray-600);
-    margin: 0;
+/* ============== Title Gold Line ============== */
+.title-gold-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+    transform-origin: left center;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.section-header--center .title-gold-line {
+    margin-left: auto;
+    margin-right: auto;
+    transform-origin: center center;
 }
 
-/* Booking Responsive */
-@media (max-width: 992px) {
-    .booking-layout {
-        grid-template-columns: 1fr;
-        gap: var(--space-2xl);
-    }
-
-    .booking-info {
-        text-align: center;
-    }
-
-    .booking-details {
-        max-width: 400px;
-        margin: 0 auto;
-    }
+/* ============== Premium Hover Overlays ============== */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(201, 169, 97, 0.15) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
-@media (max-width: 600px) {
-    .booking-card {
-        padding: var(--space-lg);
-        border-radius: 16px;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
+.gallery-item:hover::after {
+    opacity: 1;
 }
 
-@media (max-width: 480px) {
-    .booking {
-        padding: var(--space-3xl) 0;
-    }
+.dish-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light), var(--color-gold));
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    .booking-title {
-        font-size: 2rem;
-    }
+.dish-card {
+    position: relative;
+}
+
+.dish-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* ============== Testimonial Card Gold Accent ============== */
+.testimonial-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(180deg, var(--color-gold), transparent);
+    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card:hover::before {
+    height: 100%;
+}
+
+/* ============== Smooth scroll overrides ============== */
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+/* ============== Premium Preloader Exit ============== */
+.preloader {
+    will-change: transform, opacity;
+}
+
+/* ============== Button Shine Effect ============== */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+}
+
+/* ============== Gold Glow on Section Subtitles ============== */
+.section-subtitle {
+    text-shadow: 0 0 30px rgba(201, 169, 97, 0.15);
+}
+
+/* ============== Gallery Item Perspective ============== */
+.gallery-item {
+    will-change: transform;
+}
+
+.gallery-item img {
+    will-change: transform;
 }
